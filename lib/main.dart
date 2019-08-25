@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Sara\'s first (heartfelt) app',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -18,15 +18,15 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'From Sara to Matej'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key key, this.title, this.subtitle}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -38,6 +38,7 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
+  final String subtitle;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -46,14 +47,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
+  void _setTo3000() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      _counter = 3000;
     });
   }
 
@@ -92,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'I love you',
             ),
             Text(
               '$_counter',
@@ -102,10 +103,15 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        onPressed: _setTo3000,
+        tooltip: 'Tell Matej how much you love him',
+        child: Icon(Icons.favorite),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+      // floatingActionButton2: FloatingActionButton(
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Tell Matej how much you love him',
+      //   child: Icon(Icons.favorite),
+      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
